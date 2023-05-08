@@ -1,0 +1,16 @@
+ul {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+  list-style: none;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+h2 {
+  font-size: 3vw;
+  font-weight: bold;
+}
