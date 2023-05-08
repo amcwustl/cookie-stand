@@ -59,9 +59,12 @@ const seattle = {
     for (let i in this.cookiesArr){
       let cityLI = document.createElement('li');
       cityLI.innerText = `${hours[i]}: ${this.cookiesArr[i]} cookies`;
-      console.dir(cityLI);
       cityUL.appendChild(cityLI);
     }
+    let totalLI = document.createElement('li');
+    totalLI.innerText = `Total: ${this.totalCookies} cookies`;
+    cityUL.appendChild(totalLI);
+
   }
 
 };
@@ -105,9 +108,11 @@ const tokyo = {
     for (let i in this.cookiesArr){
       let cityLI = document.createElement('li');
       cityLI.innerText = `${hours[i]}: ${this.cookiesArr[i]} cookies`;
-      console.dir(cityLI);
       cityUL.appendChild(cityLI);
     }
+    let totalLI = document.createElement('li');
+    totalLI.innerText = `Total: ${this.totalCookies} cookies`;
+    cityUL.appendChild(totalLI);
   }
 
 };
@@ -151,9 +156,11 @@ const dubai = {
     for (let i in this.cookiesArr){
       let cityLI = document.createElement('li');
       cityLI.innerText = `${hours[i]}: ${this.cookiesArr[i]} cookies`;
-      console.dir(cityLI);
       cityUL.appendChild(cityLI);
     }
+    let totalLI = document.createElement('li');
+    totalLI.innerText = `Total: ${this.totalCookies} cookies`;
+    cityUL.appendChild(totalLI);
   }
 
 };
@@ -197,9 +204,11 @@ const paris = {
     for (let i in this.cookiesArr){
       let cityLI = document.createElement('li');
       cityLI.innerText = `${hours[i]}: ${this.cookiesArr[i]} cookies`;
-      console.dir(cityLI);
       cityUL.appendChild(cityLI);
     }
+    let totalLI = document.createElement('li');
+    totalLI.innerText = `Total: ${this.totalCookies} cookies`;
+    cityUL.appendChild(totalLI);
   }
 
 };
@@ -243,9 +252,11 @@ const lima = {
     for (let i in this.cookiesArr){
       let cityLI = document.createElement('li');
       cityLI.innerText = `${hours[i]}: ${this.cookiesArr[i]} cookies`;
-      console.dir(cityLI);
       cityUL.appendChild(cityLI);
     }
+    let totalLI = document.createElement('li');
+    totalLI.innerText = `Total: ${this.totalCookies} cookies`;
+    cityUL.appendChild(totalLI);
   }
 };
 // Executable Code
@@ -261,7 +272,3 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
-
-console.log(tokyo.customerArr);
-console.log(tokyo.cookiesArr);
-console.log(tokyo.totalCookies);
