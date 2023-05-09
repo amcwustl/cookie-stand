@@ -105,8 +105,75 @@ let paris = new City('Paris', 20, 38, 2.3);
 let lima = new City('Lima', 2, 16, 4.6);
 cityArr.push(seattle, tokyo, dubai, paris, lima);
 
-
-
 createHeader();
 renderAll();
 footerRow();
+
+// create graph.  I asked chatGPT for a sample to train me how to do this.  It recommended the imported script tool I used and provided the structure.
+
+const ctx = document.getElementById('myChart');
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: hours,
+    datasets: [{
+      label: 'Seattle',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      data: seattle.cookiesArr,
+      fill: false,
+    }, {
+      label: 'Tokyo',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      data: tokyo.cookiesArr,
+      fill: false,
+    }, {
+      label: 'Paris',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      data: paris.cookiesArr,
+      fill: false,
+    }, {
+      label: 'Dubai',
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      data: dubai.cookiesArr,
+      fill: false,
+    }, {
+      label: 'Lima',
+      backgroundColor: 'rgba(0, 0, 0, 1)',
+      borderColor: 'rgba(0, 0, 0, 1)',
+      data: lima.cookiesArr,
+      fill: false,
+    }]
+  },
+  options: {
+    interaction: {
+      intersect: false,
+      mode: 'index'
+    },
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Cookies Sold Per Hour'
+      }
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Time'
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Cookies Sold'
+        }
+      }
+    }
+
+  }
+});

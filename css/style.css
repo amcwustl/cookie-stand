@@ -1,17 +1,5 @@
-ul {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
-  list-style: none;
-  list-style-type: disc;
-  list-style-position: inside;
-}
-
 h2 {
-  font-size: 5vw;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -34,4 +22,14 @@ th,td {
 border: 1px solid #ddd;
 padding: 8px;
 width: calc(100vw/20);
+}
+
+#myChart {
+  position: absolute;
+  width:800px;
+  height: 400px;
+  top: 40vh;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  left: 0;
 }
