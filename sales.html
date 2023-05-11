@@ -12,7 +12,12 @@
   <header id ="sales-header">
     <img class="logo" src="img/salmon.png" alt=" Salmon Logo">
     <h1 class="storeName">Pat's Salmon Cookies</h1>
-    <a href="index.html">Home</a>
+
+    <nav class = "navbar">
+      <a class = "nav" href="index.html">Home</a>
+      <button>Add New Store</button>
+    </nav>
+  
   </header>
   <main>
     <h2 id="cookies">Hourly Cookie Sales by Location</h2>  
@@ -22,6 +27,25 @@
     <section id="chart">
       <canvas id="myChart"></canvas>
     </section>
+    <div id="overlay">
+      <form id ="myForm" style = "display:none;">
+        <fieldset>
+          <legend>New Store Information:</legend>
+          <label for="name">City Name:</label>
+          <input type="text" id="name" name="store_name">
+          <label for="minCust">Minimum Customers:</label>
+          <input type="number" id="minCust" name="minCust">
+          <label for="maxCust">Maximum Customers:</label>
+          <input type="number" id="maxCust" name="maxCust">
+          <label for="avgSale">Average Sale:</label>
+          <input type="number" step = "any" id="avgSale" name="avgSale">
+        </fieldset>
+        <button type="submit">Submit</button>
+      
+      </form>
+    </div>
+    
+
   </main>
 
 
