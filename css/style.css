@@ -10,6 +10,11 @@
   text-transform: capitalize;
 }
 
+html{
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
 .header{
   position: fixed;
   top:0; left: 0; right: 0;
@@ -23,21 +28,17 @@
   height:80px;
 }
 
-html{
-  scroll-padding-top: 7rem;
-  scroll-behavior: smooth;
-}
 
 .logo{
-  height:25px;
+  height:30px;
   display: inline-block;
-  margin-left: 0px;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-#storeName{
+.storeName{
   display: inline-block;
-  margin-right:auto;
+  margin-right:0px;
 
 }
 
@@ -46,13 +47,18 @@ html{
 }
 
 #about{
-  margin-top:100px;
-  position: static;
+  margin-top:80px;
+  position:relative;
+  height:852px;
 }
 
 #aboutContent{
-  position: relative;
+  position:relative;
   z-index: 1;  
+}
+
+#about p{
+  margin-left:10px;
 }
 
 #family{
@@ -60,31 +66,152 @@ html{
   z-index: 0;
   top: 0;
   left: 0;
-  width:100%;
+  width:auto;
+  height:100%;
   opacity: 0.7;
 }
 
-#map{
-  margin-top: 850px;
-  height: 300px;
-  width: 50%;
-  margin-left: 2.5vw;
-  margin-bottom: 100px;
+#merchandise{
+  display:flex;
+  height:600px;
+  width:100%;
+  align-items: center;
+  justify-content:space-evenly;
+  background-image: linear-gradient(to bottom, rgba(32,178,170,0.75), rgba(0,105,148,0.75));
+}
+
+#merch{
+  padding-left: 10px;
+  padding-top: 10px;
+  height:50px;
+  background-image: linear-gradient(to bottom, lightgreen, rgba(32,178,170,0.75));
+  color:white;
+}
+
+#merchandise figure{
+  height:400px;
+  text-align:center;
+}
+
+#merchandise h3{
+  font-size: larger;
+  color:white;
+}
+
+figure img{
+  height:300px;
+}
+
+figcaption{
+  color:white;
+  font-size: x-large;
+}
+
+#loc{
+  padding-left: 10px;
+  padding-top: 10px;
+  height:50px;
+  background-color: rgba(0,105,148,0.75);
+  color:white;
+}
+
+#locations{
+  display:flex;
+  height:600px;
+  width:100%;
+  align-items:center;
+  justify-content:space-evenly;
+  background: linear-gradient(rgba(0,105,148,0.75), #1a1a2e);
 }
 
 
+#map{
+  height:500px;
+  width: 40%;
+}
+
+#stores{
+  margin-left:20px;
+}
+
+div address{
+  padding-left:5px;
+  padding-right:5px;
+  color:white
+}
+
+address:hover{
+  border: 1px dashed black;
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  z-index: 1000;
+  background:#fff;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding:1rem;
+  height:150px;
+}
+
+#second-logo{
+  height:50px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+#footer-img{
+  height:100px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+/* Sales Page Formatting */
+#sales-header{
+  position: fixed;
+  top:0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  background:#fff;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding:1rem;
+  height:80px;
+}
+
+#sales-header h1{
+  font-size: xx-large;
+}
+
+#sales-header a{
+  font-size: x-large;
+}
+
 #cookies {
-  font-size: 2rem;
+  margin-top:90px;
+  font-size: x-large;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 /* table formatting help from ChatGPT */
+#city-table{
+  height:400px;
+  display:flex;
+  width:100%;
+}
 
-table {
+#cities{
   border-collapse: collapse;
   width: 95%;
   margin-left: 2.5vw;
+  height: 100%;
 }
 
 th {
@@ -99,10 +226,16 @@ padding: 8px;
 width: calc(100vw/20);
 }
 
+#chart{
+  height:600px;
+  display: flex;
+  justify-content: center;
+}
+
 #myChart {
-  position: absolute;
-  width:800px;
-  height: 400px;
+
+  width:auto;
+  height: 550px;
   top: 40vh;
   margin-left: 2.5vw;
   margin-right: 2.5vw;
