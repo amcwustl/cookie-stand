@@ -73,6 +73,8 @@ function City(name, minCust, maxCust, avgSale) {
 
 City.prototype.generateCookies = function() {
   let cookies = 0;
+  this.totalCookies = 0;
+  this.cookiesArr = [];
   for (let i in hours){
     cookies = Math.round(this.avgSale * generateCustomers(this.minCust, this.maxCust));
     this.cookiesArr.push(cookies);
@@ -117,7 +119,7 @@ function renderChart(){
     datasets: []
   };
 
-  let colors = ['red','green','blue','purple','black','orange','brown'];
+  let colors = ['red','green','blue','purple','black','orange','brown', 'magenta', 'grey', 'periwinkle', 'yellow'];
 
   for (let i in cityArr){
     let dataset = {
@@ -152,7 +154,30 @@ function toggleForm(){
   }
 }
 
+let submit = document.getElementById('myForm');
+submit.addEventListener('submit', formHandler);
+
 function formHandler(event) {
+  event.preventDefault();
+  let name = event.target.elements.store_name.value;
+  let minCust = Number(event.target.elements.minCust.value);
+  let maxCust = Number(event.target.elements.maxCust.value);
+  let avgSale = Number(event.target.elements.avgSale.value);
+
+  let newCity = new City(name,minCust,maxCust,avgSale);
+  cityArr.push(newCity);
+
+  let newTable = document.getElementById('cities');
+  while (newTable.firstChild) {
+    newTable.removeChild(newTable.firstChild);
+  }
+  submit.reset();
+  toggleForm();
+  createHeader();
+  renderAll();
+  footerRow();
+
+
   let newChart = document.getElementById('chart');
   while (newChart.firstChild) {
     newChart.removeChild(newChart.firstChild);
