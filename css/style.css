@@ -147,7 +147,7 @@ address:hover{
 footer{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
   z-index: 1000;
   background:#fff;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
@@ -168,6 +168,10 @@ footer{
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
+
+}
+
+footer address{
 
 }
 
