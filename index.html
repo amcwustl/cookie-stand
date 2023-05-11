@@ -8,28 +8,84 @@
   <title>Document</title>
 </head>
 <body>
-  <header class="header">
-    <img class="logo" src="img/chinook.jpg" alt="Chinook Salmon Logo">
-    <h1 id="storeName">Pat's Salmon Cookies</h1>
-    <nav class="navbar">
-    <a class="nav" href="#about">About</a>
-    <a class="nav" href="#locations">Locations</a>
-    <a class="nav" href="sales.html">Sales Page</a>
-    </nav>
-  </header>
-  <section id="about">
-    <div id="aboutContent">
-      <h2>About Us:</h2>
-      <p>Our story began with a simple question:</p>
-      <p>What if we put salmon bits in cookies?</p>
-    </div>
-    <div>
-      <img id="family" src="img/family.jpg" alt="Our founder Pat with his family.">
-    </div>
-  </section>
-  <section id="locations">
-    <div id="map"></div>
-  </section>
+  <main>
+    <header class="header">
+      <img class="logo" src="img/salmon.png" alt=" Salmon Logo">
+      <h1 id="storeName">Pat's Salmon Cookies</h1>
+      <nav class="navbar">
+        <a class="nav" href="#about">About</a>
+        <a class="nav" href="#merchandise">Merchandise</a>
+        <a class="nav" href="#locations">Locations</a>
+        <a class="nav" href="sales.html">Sales Page</a>
+      </nav>
+    </header>
+    <section id="about">
+      <div id="aboutContent">
+        <h2>About Us:</h2>
+        <p>Our story began with a simple question:</p>
+        <p>What if we put salmon bits in cookies? Since 1999, we have been</p>
+        <p>experimenting with all types of salmon and have settled on the</p>
+        <p>perfect mix of chinook and coho bits to give that perfect</p>
+        <p>umami to every bite! Come on in and give them a try!</p>
+      </div>
+      <div>
+        <img id="family" src="img/family.jpg" alt="Our founder Pat with his family.">
+      </div>
+    </section>
+    <h2 id="merch">Merchandise:</h2>
+    <section id="merchandise">
+      <figure>
+        <h3>Salmon Shaped Cookie Cutter</h3>
+        <img title="Salmon Shaped Cookie Cutter - $20.00" src="img/cutter.jpeg" alt="Fish shaped cookie cutters">
+        <figcaption>$20.00</figcaption>
+      </figure>
+      <figure>
+        <h3>Salmon T-Shirt</h3>
+        <img title="Salmon Tshirt - $25" src="img/shirt.jpg" alt="Pat's salmon cookies t-shirt">
+        <figcaption>$25.00</figcaption>
+      </figure>
+      <figure>
+        <h3>Box - 20 Salmon Cookies</h3>
+        <img title="Box-20 Salmon Cookies - $40.00" src="img/frosted-cookie.jpg" alt="Frosted cookies for sale">
+        <figcaption>$40.00</figcaption>
+      </figure>
+     </section>
+    <h2 id="loc">Locations:</h2>
+    <section id="locations">
+      <div id="map"></div>
+      <div id="stores">
+        <address id="seattle">Flagship Store Seattle: <br />
+          1423 3rd Ave, Seattle, WA 98101, United States <br />
+          Hours: 6am-8pm 7 days a week
+        </address>
+        <address id="paris"><br /> Pat's Cookies Paris: <br />
+          6 Rue de la Paix, 75002 Paris, France <br />
+          Hours: 6am-8pm 7 days a week
+
+        </address>
+        <address id="dubai"><br/> Pat's Cookies Dubai: <br />
+          Sheikh Zayed Rd - Dubai - United Arab Emirates <br />
+          Hours: 6am-8pm 7 days a week
+
+        </address>
+        <address id="lima"><br/> Pat's Cookies Lima: <br />
+          Jirón de la Unión 104, Cercado de Lima 15001, Peru <br />
+          Hours: 6am-8pm 7 days a week
+
+        </address>
+        <address id="tokyo"><br/> Pat's Cookies Tokyo: <br />
+          1 Chome-9-1 Marunouchi, Chiyoda City, Tokyo 100-0005, Japan <br />
+          Hours: 6am-8pm 7 days a week
+
+        </address>
+      </div>
+    </section>
+    <footer>
+      <img id="second-logo" src="img/chinook.jpg" alt="Alternate Salmon Logo" title="Alternate Salmon Logo">
+      <address>Contact</address>
+      <img id="footer-img" src="img/fish.jpg" alt="Jumping Salmon" title="Jumping Salmon">
+    </footer>
+  </main>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT9j81ckbM3fG7-OaRJYicpLUa5FY8ZnM"></script>
   <script src="js/map.js"></script>
 </body>
