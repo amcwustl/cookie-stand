@@ -7,6 +7,7 @@ let cityArr = [];
 // HTML Table Start and helper fuctions
 
 let citiesTable = document.getElementById('cities');
+let chart = {};
 
 function createHeader() {
   let headerRow = document.createElement('tr');
@@ -109,71 +110,57 @@ createHeader();
 renderAll();
 footerRow();
 
-// create graph.  I asked chatGPT for a sample to train me how to do this.  It recommended the imported script tool I used and provided the structure.
-
-const ctx = document.getElementById('myChart');
-const chart = new Chart(ctx, {
-  type: 'line',
-  data: {
+// create graph.  Chat GPT recommended Chart.JS.  Code snippets taken from chatgpt + examination of chart.js documentation
+function renderChart(){
+  let chartData = {
     labels: hours,
-    datasets: [{
-      label: 'Seattle',
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      data: seattle.cookiesArr,
-      fill: false,
-    }, {
-      label: 'Tokyo',
-      backgroundColor: 'rgba(54, 162, 235, 0.2)',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      data: tokyo.cookiesArr,
-      fill: false,
-    }, {
-      label: 'Paris',
-      backgroundColor: 'rgba(255, 206, 86, 0.2)',
-      borderColor: 'rgba(255, 206, 86, 1)',
-      data: paris.cookiesArr,
-      fill: false,
-    }, {
-      label: 'Dubai',
-      backgroundColor: 'rgba(75, 192, 192, 0.2)',
-      borderColor: 'rgba(75, 192, 192, 1)',
-      data: dubai.cookiesArr,
-      fill: false,
-    }, {
-      label: 'Lima',
-      backgroundColor: 'rgba(0, 0, 0, 1)',
-      borderColor: 'rgba(0, 0, 0, 1)',
-      data: lima.cookiesArr,
-      fill: false,
-    }]
-  },
-  options: {
-    interaction: {
-      intersect: false,
-      mode: 'index'
-    },
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Cookies Sold Per Hour'
-      }
-    },
-    scales: {
-      x: {
-        title: {
-          display: true,
-          text: 'Time'
-        }
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Cookies Sold'
-        }
-      }
-    }
+    datasets: []
+  };
 
+  let colors = ['red','green','blue','purple','black','orange','brown'];
+
+  for (let i in cityArr){
+    let dataset = {
+      label: cityArr[i].name,
+      data: cityArr[i].cookiesArr,
+      borderColor: colors[i],
+      backgroundColor: colors[i],
+      fill: false
+    };
+    chartData.datasets.push(dataset);
   }
-});
+
+  const ctx = document.getElementById('myChart');
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: chartData
+  });
+}
+renderChart();
+
+
+// add form
+let button = document.querySelector('button');
+button.addEventListener('click', toggleForm);
+
+function toggleForm(){
+  const form= document.getElementById('myForm');
+  if (form.style.display ==='none'){
+    form.style.display = 'block';
+  } else {
+    form.style.display='none';
+  }
+}
+
+function formHandler(event) {
+  let newChart = document.getElementById('chart');
+  while (newChart.firstChild) {
+    newChart.removeChild(newChart.firstChild);
+  }
+  let newCanvas = document.createElement('canvas');
+  newCanvas.id = 'myChart';
+  newChart.appendChild(newCanvas);
+
+  renderChart();
+}
+
