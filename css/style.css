@@ -49,7 +49,8 @@ html{
 #about{
   margin-top:80px;
   position:relative;
-  height:852px;
+  height:1000px;
+  width:100%;
 }
 
 #aboutContent{
@@ -239,6 +240,7 @@ width: calc(100vw/20);
   top: 40vh;
   margin-left: 2.5vw;
   margin-right: 2.5vw;
+  margin-top: 30px;
   left: 0;
 }
 
